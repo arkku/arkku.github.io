@@ -46,5 +46,5 @@ I, [Arkku](https://github.com/arkku/), program software for computers, microcont
 {% if categories_count == 0 %}
 <p style="float: left">Under construction.</p>
 
-<img src="{{ "/assets/img/under-construction.gif" | relative_url }}" width="133px" height="133px" align="right" alt="[Under construction]" style="width: 133px; height: 133px; float: right;" />
+<img src="{{ "/assets/img/under-construction.gif" | relative_url }}" width="133" height="133" alt="[Under construction]" style="width: 133px; height: 133px; float: right;" />
 {% endif %}
