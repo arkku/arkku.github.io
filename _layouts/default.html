@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}" />
+  {% if page.layout == "category" %}
+  {% capture category_feed %}/feed/{{ page.title | slugify }}.xml{% endcapture %}
+  <link rel="alternate" type="application/atom+xml" href="{{ category_feed | absolute_url }}" title="{{ page.title }} on {{ site.title }} atom feed"/>
+  {% else %}
+  <link rel="alternate" type="application/atom+xml" href="{{ "/feed/atom.xml" | absolute_url }}" title="{{ site.title }} atom feed" />
+  {% endif %}
+  {% seo %}
+  </head><body><header><div id="hdr">{% include breadcrumbs.html %}</header>
+  <div class="container-lg px-3 markdown-body">
+    {{ content }}
+  </div><footer><div id="ftr">{% include breadcrumbs.html %}<div id="copyright">© {{ 'now' | date: '%Y' }} <a rel="author" href="#email" id="email" data-name="kk" data-domain="arkku" data-tld="com"
+    onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">Kimmo Kulovesi</a>
+  </div></div></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    {% if site.google_analytics %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,49 @@
+github: [metadata]
+title: arkku.dev
+description: Arkku codes and tinkers with electronics, microcontrollers, and retro computers.
+encoding: UTF-8
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  gfm_quirks: [paragraph_end, no_auto_typographic]
+  toc_levels: 2..3
+future: true
+jailed: false
+theme: jekyll-theme-primer
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-avatar
+  - jekyll-github-metadata
+  - jekyll-seo-tag
+github_username: arkku
+twitter_username: kkuloves
+author:
+  github: arkku
+  facebook: arkku
+  instagram: arkku
+  twitter: kkuloves
+  youtube: arkku
+  flickr: arkku
+feed:
+  path: "/feed/atom.xml"
+  categories:
+    - retrocomputing
+defaults:
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+  -
+      scope:
+        path: "assets/img"
+      values:
+        image: true

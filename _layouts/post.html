@@ -1,0 +1,13 @@
+---
+layout: default
+---
+{% include squaredate.html %}
+<article>{{ content }}</article>
+{% if page.tags.size > 0 %}
+    <div class="post-tags text-gray"><ul class="tags">
+    {% for tag in page.tags %}
+        {% capture tag_link %}/tags/#{{ tag | slugify }}{% endcapture %}
+        <li class="tag"><a href="{{ tag_link | relative_url }}" class="tag">{{ tag }}</a></li>
+    {% endfor %}
+    </ul></div>
+{% endif %}

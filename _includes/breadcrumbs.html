@@ -1,0 +1,9 @@
+<nav><div class="breadcrumbs"><ul><li>
+    <a href="{{ "/" | absolute_url }}" class="breadcrumb{% if page.title == site.title %} current{% endif %}">{{ site.title | downcase }}</a></li>
+{% for category in page.categories %}
+<li> » <a href="{{ category | slugify | absolute_url }}" class="breadcrumb">{{ category | downcase }}</a></li>
+{% endfor %}
+{% if page.title != site.title %}
+<li> » <a href="{{ page.url | absolute_url }}" class="current breadcrumb">{{ page.title }}</a></li>
+{% endif %}
+</ul></div></nav>

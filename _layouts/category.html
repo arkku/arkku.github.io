@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+{{ content }}
+
+{% capture category_name %}{{ page.title }}{% endcapture %}
+{% capture category_link %}/{{ category_name | slugify }}{% endcapture %}
+
+<dl>
+{% for post in site.categories[category_name] %}
+{% include post_item.html %}
+{% endfor %}
+</dl>
