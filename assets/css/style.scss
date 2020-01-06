@@ -175,6 +175,11 @@ a:hover {
     text-decoration: underline;
 }
 
+.markdown-body hr {
+    background: #fff;
+    border-bottom: 1px solid #999;
+}
+
 .post-title {
     font-style: normal;
 }
@@ -265,7 +270,8 @@ table.rouge-table {
         border-bottom: 1px solid #069;
     }
     .markdown-body hr {
-        background-color: #069;
+        background-color: #000;
+        border-bottom: 1px solid #069;
     }
     .markdown-body h1, .markdown-body h2 {
         border-bottom: 1px solid #069;
