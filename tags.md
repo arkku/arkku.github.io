@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Tag
+title: Tags
+description: All posts on arkku.dev grouped by tags.
 ---
 
 # Tags
