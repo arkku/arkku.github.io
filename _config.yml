@@ -16,7 +16,7 @@ kramdown:
     span:
       line_numbers: false
     block:
-      line_numbers: true
+      line_numbers: false # 2020-01 produces invalid HTML if enabled
       start_line: 1
 future: true
 jailed: false
@@ -31,6 +31,7 @@ plugins:
   - jekyll-titles-from-headings
 github_username: arkku
 twitter_username: kkuloves
+google_analytics: UA-345035-3
 author:
   github: arkku
   facebook: arkku

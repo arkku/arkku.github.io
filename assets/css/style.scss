@@ -177,7 +177,7 @@ a:hover {
 
 .markdown-body hr {
     background: #fff;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #eaecef;
 }
 
 .post-title {
@@ -206,14 +206,18 @@ dd, dt {
 
 .highlight .nf { font-weight: normal; }
 .highlight .o { font-weight: normal; }
-table.rouge-table tr, table.rouge-table td.rouge-code, table.rouge-table td.rouge-gutter {
+table.rouge-table tr, table.rouge-table td {
     border: none;
     padding: 0;
 }
-table.rouge-table {
+pre.highlight table.rouge-table, .markdown-body figure.highlight table.rouge-table {
     margin: -16px;
 }
+/* figure.highlight { margin: 0; } */
 
+pre code {
+    white-space: pre;
+}
 .lineno {
     color: #ddd;
 }
@@ -248,6 +252,10 @@ table.rouge-table {
 
 .highlight .ow { color: #000; }
 .highlight .o { color: #069; }
+
+.markdown-body pre code, .markdown-body pre tt { max-width: 100%; }
+.markdown-body li { word-wrap: break-word; }
+td.rouge-gutter pre.lineno { text-align: right; }
 
 @media (prefers-color-scheme: dark) {
     body {
