@@ -31,7 +31,7 @@ plugins:
   - jekyll-titles-from-headings
 github_username: arkku
 twitter_username: kkuloves
-google_analytics: UA-345035-3
+#google_analytics: UA-345035-3
 author:
   github: arkku
   facebook: arkku
