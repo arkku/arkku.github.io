@@ -262,6 +262,10 @@ pre code {
 .highlight .ow { color: #000; }
 .highlight .o { color: #069; }
 
+div.cc-revoke { visibility: hidden; }
+
+#fbcomments iframe { width: 100% !important; }
+
 .markdown-body pre code, .markdown-body pre tt { max-width: 100%; }
 .markdown-body li { word-wrap: break-word; }
 td.rouge-gutter pre.lineno { text-align: right; }
