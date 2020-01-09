@@ -10,7 +10,7 @@ window.addEventListener('load', function(){
   window.cookieconsent.initialise({
    revokeBtn: "<div class='cc-revoke'></div>",
    type: "opt-in",
-   theme: "classic",
+   theme: "edgeless",
    palette: {
        popup: {
            background: isInDarkMode ? "#234" : "#eee",
@@ -21,6 +21,7 @@ window.addEventListener('load', function(){
            text: "#fff"
         }
     },
+   location: false,
    content: {
        message: "This website, and third-party services used by this website, may use cookies for analytics and to provide social features.",
        link: "Privacy Policy",

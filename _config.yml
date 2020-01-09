@@ -4,6 +4,8 @@ description: Arkku codes and tinkers with electronics, microcontrollers, and ret
 encoding: UTF-8
 highlighter: rouge
 markdown: kramdown
+sass:
+  style: compressed
 kramdown:
   input: GFM
   hard_wrap: false
