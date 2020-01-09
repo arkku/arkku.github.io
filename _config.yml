@@ -24,14 +24,16 @@ theme: jekyll-theme-primer
 permalink: /:categories/:title/
 plugins:
   - jekyll-feed
-  - jekyll-avatar
-  - jekyll-github-metadata
   - jekyll-seo-tag
-  - jekyll-optional-front-matter
+  - jekyll-sitemap
+  - jekyll-github-metadata
+  - jekyll-avatar
   - jekyll-titles-from-headings
+  #- jekyll-optional-front-matter
 github_username: arkku
 twitter_username: kkuloves
-#google_analytics: UA-345035-3
+google_analytics: UA-345035-3
+facebook_app: 1745750852233915
 author:
   github: arkku
   facebook: arkku
@@ -63,3 +65,6 @@ defaults:
       image: true
 optional_front_matter:
   remove_originals: true
+exclude:
+  - site.code-workspace
+  - LICENSE

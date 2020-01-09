@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% if site.facebook_app %}
+<div id="fb-root"></div>
+{% endif %}
 {% include squaredate.html %}
 <article>{{ content }}</article>
 {% if page.tags.size > 0 %}
@@ -10,4 +13,9 @@ layout: default
         <li class="tag"><a href="{{ tag_link | relative_url }}" class="tag">{{ tag }}</a></li>
     {% endfor %}
     </ul></div>
+{% endif %}
+{% if site.facebook_app %}
+{% unless post.nocomments %}
+<div id="fbcomments" class="fb-comments" data-href="{{ site.url }}{{ page.url | relative-url }}" data-numposts="10" data-width="" style="width: 100%; clear: both"></div>
+{% endunless %}
 {% endif %}

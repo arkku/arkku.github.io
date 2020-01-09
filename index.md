@@ -1,5 +1,6 @@
 ---
-title: arkku.dev
+title: arkku.dev home
+privacylink: true
 ---
 
 ## Introduction

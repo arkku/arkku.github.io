@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    {% if site.google_analytics %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-    </script>
-    {% endif %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,23 +12,23 @@
   <link rel="alternate" type="application/atom+xml" href="{{ "/feed/atom.xml" | absolute_url }}" title="{{ site.title }} atom feed" />
   {% endif %}
   {% seo %}
+  {% unless page.noscripts %}
+  {% include scripts_head.html %}
+  {% endunless %}
   </head><body><header><div id="hdr">{% include breadcrumbs.html %}</div></header>
   <div class="container-lg px-3 markdown-body">
     {{ content }}
-  </div><footer><div id="ftr">{% include breadcrumbs.html %}<div id="copyright">© {{ 'now' | date: '%Y' }} <a rel="author" href="#email" id="email" data-name="kk" data-domain="arkku" data-tld="com"
-    onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">Kimmo Kulovesi</a>
-  </div></div></footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha256-E4RlfxwyJVmkkk0szw7LYJxuPlp6evtPSBDlWHsYYL8=" crossorigin="anonymous"></script>
-    <script>anchors.add('h2, h3, h4');</script>
-    {% if site.google_analytics_old %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
+  </div><footer><div id="ftr">
+    {% if page.privacylink %}
+    <div id="privacylink"><a href="{{ "/privacy/" | absolute_url }}">Privacy
+            Policy</a></div>
     {% endif %}
+    {% include breadcrumbs.html %}
+    <div id="copyright">© {{ 'now' | date: '%Y' }} <a rel="author" href="#email" id="email" data-name="kk" data-domain="arkku" data-tld="com"
+                                                                                                                                onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">Kimmo Kulovesi</a></div>
+  </div></footer>
+{% unless page.noscripts %}
+    {% include scripts.html %}
+{% endunless %}
   </body>
 </html>
