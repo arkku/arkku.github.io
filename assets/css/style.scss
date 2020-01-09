@@ -1,18 +1,6 @@
 ---
 ---
 
-* {
-    border: 0;
-    margin: 0;
-    padding:0
-}
-
-body, p, div, span, applet, object, iframe, img, blockquote, pre, abbr, acronym, ul, ol, li, dl, dd, dt, address, cite, code, kbd, samp, del, strong, sub, sup, tt, var, h1, h2, h3, h4, h5, h6, thead, table, tr, td, tbody {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
 article, section, aside, footer, header, nav, hgroup {
     display:block
 }
@@ -269,6 +257,8 @@ div.cc-revoke { visibility: hidden; }
 .markdown-body pre code, .markdown-body pre tt { max-width: 100%; }
 .markdown-body li { word-wrap: break-word; }
 td.rouge-gutter pre.lineno { text-align: right; }
+
+{% include cookieconsent.css %}
 
 @media (prefers-color-scheme: dark) {
     body {
