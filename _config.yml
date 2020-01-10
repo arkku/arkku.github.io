@@ -1,5 +1,6 @@
 github: [metadata]
 title: arkku.dev
+url: "https://arkku.dev"
 description: Arkku codes and tinkers with electronics, microcontrollers, and retro computers.
 encoding: UTF-8
 highlighter: rouge
@@ -25,13 +26,13 @@ jailed: false
 theme: jekyll-theme-primer
 permalink: /:categories/:title/
 plugins:
+  -
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-github-metadata
   - jekyll-avatar
   - jekyll-titles-from-headings
-  #- jekyll-optional-front-matter
+  - jekyll-optional-front-matter
 github_username: arkku
 twitter_username: kkuloves
 google_analytics: UA-345035-3

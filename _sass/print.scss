@@ -1,0 +1,53 @@
+@media print {
+    body, .markdown-body pre, .markdown-body code, .markdown-body * {
+        color: black;
+        background: none;
+    }
+    .markdown-body .highlight pre {
+        color: black;
+        background: none;
+        border-top: 1px dashed #666;
+        border-bottom: 1px dashed #666;
+    }
+    pre.highlight > code span, .highlight pre > code span {
+        color: black !important;
+    }
+    #hdr, div.breadcrumbs, .cc-window, a.anchorjs-link, #fbcomments {
+        visibility: hidden;
+        display: none;
+    }
+    #privacylink:after {
+        color: black;
+        content: $site_title;
+        font-size: 16px;
+    }
+    #privacylink a {
+        display: none;
+    }
+    a, a:link, a:visited, .post-desc, #copyright {
+        color: black;
+    }
+    .markdown-body hr {
+        border-bottom: 1px solid #999;
+    }
+    p a, dt a {
+        text-decoration: underline;
+    }
+    p a[href^="#"], dt a[href^="#"] {
+        text-decoration: none;
+    }
+    p a[href^="#"]:after, dt a[href^="#"]:after, li a[href^="#"]:after {
+        display: none;
+    }
+    p a:after, dt a:after, li a:after {
+        content: "→" attr(href) " ";
+        font-size: 0.5em;
+        vertical-align: sub;
+        text-decoration: none;
+        word-wrap: break-word;
+        display: inline-block; // needed to disable underline
+    }
+    p a[href^="/"]:after, dt a[href^="/"]:after, li a[href^="/"]:after {
+        content: "→" $site_url attr(href) " ";
+    }
+}

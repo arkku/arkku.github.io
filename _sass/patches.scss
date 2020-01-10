@@ -1,0 +1,39 @@
+h1, h2, h3, h4, h5, h6, hr, dd, dt {
+    clear: both;
+}
+
+a img, :link img, :visited img {
+    border:0
+}
+
+del, .strike {
+    text-decoration:line-through
+}
+
+.markdown-body hr {
+    background: none;
+    border-bottom: 1px solid #eaecef;
+}
+
+pre code {
+    white-space: pre;
+}
+
+.markdown-body pre code, .markdown-body pre tt {
+    max-width: 100%;
+}
+
+.markdown-body dl > dt {
+    font-size: 1.25em;
+    padding-top: 0.25em;
+}
+
+.markdown-body li {
+    word-wrap: break-word;
+}
+
+/* cookie consent revoke button */
+div.cc-revoke { display: none; }
+
+/* Facebook comments dynamic width fix */
+#fbcomments iframe { width: 100% !important; }

@@ -2,7 +2,16 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "assets"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.wordWrap": "on",
+		"markdownlint.config": {
+			"default": true,
+			"MD033": false
+		}
+	}
 }

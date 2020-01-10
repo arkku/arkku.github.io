@@ -3,79 +3,76 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
 <script>
 window.addEventListener('load', function(){
-  var isInDarkMode = false
+  var isInDarkMode = false;
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    isInDarkMode = true
+    isInDarkMode = true;
   }
   window.cookieconsent.initialise({
-   revokeBtn: "<div class='cc-revoke'></div>",
-   type: "opt-in",
-   theme: "edgeless",
-   palette: {
-       popup: {
-           background: isInDarkMode ? "#234" : "#eee",
-           text: isInDarkMode ? "#fff" : "#889"
-        },
-       button: {
-           background: isInDarkMode ? "#1bd" : "#58f",
-           text: "#fff"
-        }
+    revokeBtn: "<div class='cc-revoke'></div>",
+    type: "opt-in",
+    theme: "classic",
+    palette: {
+      popup: {
+        background: isInDarkMode ? "#234" : "#eee",
+        text: isInDarkMode ? "#fff" : "#889"
+      },
+      button: {
+        background: isInDarkMode ? "#1bd" : "#58f",
+        text: "#fff"
+      }
     },
-   location: false,
-   content: {
-       message: "This website, and third-party services used by this website, may use cookies for analytics and to provide social features.",
-       link: "Privacy Policy",
-       allow: "Allow Cookies",
-       deny: "Decline",
-       href: "{{ "/privacy/" | absolute_url }}"
+    location: false,
+    content: {
+      message: "This website, and third-party services used by this website, may use cookies for analytics and to provide social features.",
+      link: "Privacy Policy",
+      allow: "Allow Cookies",
+      deny: "Decline",
+      href: "{{ "/privacy/" | absolute_url }}"
     },
     onInitialise: function(status) {
-        if (status == cookieconsent.status.allow) { cookiesAllowed(); } else { noCookiesAllowed(); }
+      if (status == cookieconsent.status.allow) { cookiesAllowed(); } else { noCookiesAllowed(); }
     },
     onStatusChange: function(status) {
-        if (this.hasConsented()) { cookiesAllowed(); } else { noCookiesAllowed(); }
+      if (this.hasConsented()) { cookiesAllowed(); } else { noCookiesAllowed(); }
     }
   })
 });
 
 function cookiesAllowed() {
-  var isInDarkMode = false
+  var isInDarkMode = false;
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    isInDarkMode = true
+    isInDarkMode = true;
   }
-{% if site.google_analytics %}
-    window['ga-disable-{{ site.google_analytics }}'] = false;
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
-{% endif %}
-{% if site.facebook_app %}
-{% unless page.nocomments %}
-    var fbComments = document.getElementById('fbcomments');
-    if (fbComments && !document.getElementById('fbjs')) {
-        fbComments.setAttribute('data-colorscheme', isInDarkMode ? 'dark' : 'light');
-        var script = document.createElement('script');
-        script.id = 'fbjs';
-        script.crossOrigin = 'anonymous';
-        script.async = true;
-        script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId={{ site.facebook_app }}';
-        document.head.appendChild(script);
-    }
-{% endunless %}
-{% endif %}
-
+//{% if site.google_analytics %} Google Analytics
+  window['ga-disable-{{ site.google_analytics }}'] = false;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
+//{% endif %}
+//{% if site.facebook_app %}{% unless page.nocomments %} Facebook Comments
+  var fbComments = document.getElementById('fbcomments');
+  if (fbComments && !document.getElementById('fbjs')) {
+    fbComments.setAttribute('data-colorscheme', isInDarkMode ? 'dark' : 'light');
+    var script = document.createElement('script');
+    script.id = 'fbjs';
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId={{ site.facebook_app }}';
+    document.head.appendChild(script);
+  }
+//{% endunless %}{% endif %}
 }
 
 function noCookiesAllowed() {
-{% if site.google_analytics %}
+//{% if site.google_analytics %} Google Analytics
   window['ga-disable-{{ site.google_analytics }}'] = true;
-{% endif %}
-{% if site.facebook_app %}
-    var fbScript = document.getElementById('fbjs');
-    if (fbScript) {
-        fbScript.parentNode.removeChild(fbScript);
-    }
-{% endif %}
+//{% endif %}
+//{% if site.facebook_app %} Facebook
+  var fbScript = document.getElementById('fbjs');
+  if (fbScript) {
+    fbScript.parentNode.removeChild(fbScript);
+  }
+//{% endif %}
 }
 </script>

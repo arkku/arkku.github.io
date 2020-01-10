@@ -1,0 +1,76 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #eee;
+        background-color: #000;
+    }
+    a, .link-hover-blue:hover, .muted-link:hover {
+        color: #00eeff;
+    }
+    .muted-link, .lead, .markdown-body h6 {
+        color: #ccddee;
+    }
+    .text-emphasized {
+        color: #ccffff;
+    }
+    .markdown-body .absent {
+        color: #ff2431;
+    }
+    hr, .rule {
+        border-bottom: 1px solid #069;
+    }
+    .markdown-body hr {
+        background-color: #000;
+        border-bottom: 1px solid #069;
+    }
+    .markdown-body h1, .markdown-body h2 {
+        border-bottom: 1px solid #069;
+    }
+    fieldset {
+        border: 1px solid #069;
+    }
+    .border {
+        border: 1px solid #069 !important;
+    }
+    .border-top {
+        border-top: 1px solid #069 !important;
+    }
+    .border-bottom {
+        border-bottom: 1px solid #069 !important;
+    }
+    .border-left {
+        border-left: 1px solid #069 !important;
+    }
+    .border-right {
+        border-right: 1px solid #069 !important;
+    }
+    .border-y {
+        border-top: 1px solid #069 !important;
+        border-bottom: 1px solid #069 !important;
+    }
+    .markdown-body blockquote {
+        color: #99eecc;
+        border-left: 0.25em solid #096;
+    }
+    .markdown-body h1 .octicon-link, .markdown-body h2 .octicon-link, .markdown-body h3 .octicon-link, .markdown-body h4 .octicon-link, .markdown-body h5 .octicon-link, .markdown-body h6 .octicon-link {
+        color: #cec;
+    }
+    .markdown-body table th, .markdown-body table td {
+         border: 1px solid #069;
+    }
+    .markdown-body table tr {
+        background-color: #000;
+        border-top: 1px solid #069;
+    }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: #001;
+    }
+    .markdown-body img {
+        background-color: #000;
+    }
+    .markdown-body span.frame > span {
+        border: 1px solid #069;
+    }
+    .markdown-body span.frame span span {
+        color: #069;
+    }
+}
