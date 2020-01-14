@@ -1,5 +1,9 @@
 /* header and footer */
 
+#article {
+    margin-bottom: 4em;
+}
+
 #privacylink {
     font-size: 0.5em;
     text-align: center;
@@ -41,6 +45,18 @@
 #hdr nav {
     padding-bottom: .25em;
     margin-bottom: 1.25em
+}
+
+#fbdisclaimer {
+    font-size: 0.5em;
+    color: #999;
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+#fbdisclaimer a:link {
+    color: #385898;
 }
 
 /* breadcrumbs */

@@ -40,8 +40,9 @@ window.addEventListener('load', function(){
 
 function cookiesAllowed() {
   var isInDarkMode = false;
+  var colorScheme = 'light';
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    isInDarkMode = true;
+    isInDarkMode = true; colorScheme = 'dark';
   }
 //{% if site.google_analytics %} Google Analytics
   window['ga-disable-{{ site.google_analytics }}'] = false;
@@ -50,14 +51,21 @@ function cookiesAllowed() {
   gtag('js', new Date());
   gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
 //{% endif %}
-//{% if site.facebook_app %}{% unless page.nocomments %} Facebook Comments
+//{% if site.facebook_app %}{% unless page.nocomments and page.nolike %} Facebook Comments
+//{% capture fbdisclaimer %}{% include fbdisclaimer.html %}{% endcapture %}
   var fbComments = document.getElementById('fbcomments');
-  if (fbComments && !document.getElementById('fbjs')) {
-    fbComments.setAttribute('data-colorscheme', isInDarkMode ? 'dark' : 'light');
+  var fbLike = document.getElementById('fblike');
+  if ((fbComments || fbLike) && !document.getElementById('fbjs')) {
+    if (fbComments) {
+      fbComments.setAttribute('data-colorscheme', colorScheme);
+      var div = document.createElement('div');
+      div.id = 'fbdisclaimer';
+      div.innerHTML = '{{ fbdisclaimer | strip | normalize_whitespace | replace: singlequote, "&#39;" }}';
+      fbComments.parentNode.insertBefore(div, fbComments.nextSibling);
+    }
+    if (fbLike) { fbLike.setAttribute('data-colorscheme', colorScheme); }
     var script = document.createElement('script');
-    script.id = 'fbjs';
-    script.crossOrigin = 'anonymous';
-    script.async = true;
+    script.id = 'fbjs'; script.crossOrigin = 'anonymous'; script.async = true;
     script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId={{ site.facebook_app }}';
     document.head.appendChild(script);
   }
@@ -70,9 +78,7 @@ function noCookiesAllowed() {
 //{% endif %}
 //{% if site.facebook_app %} Facebook
   var fbScript = document.getElementById('fbjs');
-  if (fbScript) {
-    fbScript.parentNode.removeChild(fbScript);
-  }
+  if (fbScript) { fbScript.parentNode.removeChild(fbScript); }
 //{% endif %}
 }
 </script>
