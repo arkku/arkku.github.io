@@ -15,12 +15,11 @@
   {% seo %}
   {% unless page.noscripts %}{% include scripts_head.html %}{% endunless %}
   </head><body><header><div id="hdr">{% include breadcrumbs.html %}</div></header>
-  <div class="container-lg px-3 markdown-body">
+  <div class="container-lg px-3 markdown-body"><main>
     {{ content }}
-  </div><footer><div id="ftr">
+  </main></div><footer><div id="ftr">
     {% if page.privacylink %}
-    <div id="privacylink"><a href="{{ "/privacy/" | absolute_url }}">Privacy
-            Policy</a></div>
+    <div id="privacylink"><a href="{{ "/privacy/" | absolute_url }}">Privacy Policy</a></div>
     {% endif %}
     {% include breadcrumbs.html %}
     <div id="copyright">© {{ 'now' | date: '%Y' }} <a rel="author" href="#email" id="email" data-me="kk" data-domain="arkku" data-tld="com" onclick="window.location.href = 'mailto'+':'+this.dataset.me+'@'+this.dataset.domain+'.'+this.dataset.tld; return false;">Kimmo Kulovesi</a></div>

@@ -4,21 +4,23 @@ layout: default
 {% if site.facebook_app %}
 <div id="fb-root"></div>
 {% endif %}
-{% include squaredate.html %}
-<article id="article">{{ content }}</article>
+<article id="article">{% include squaredate.html %}
+{{ content }}</article>
 {% if page.tags.size > 0 %}
-    <div class="post-tags text-gray"><ul class="tags">
+    <div class="post-tags text-gray"><nav><ul class="tags">
     {% for tag in page.tags %}
         {% capture tag_link %}/tags/#{{ tag | slugify }}{% endcapture %}
         <li class="tag"><a href="{{ tag_link | relative_url }}" class="tag">{{ tag }}</a></li>
     {% endfor %}
-    </ul></div>
+    </ul></nav></div>
 {% endif %}
 {% if site.facebook_app %}
+<div class="social">
 {% unless page.nolike %}
 <div id="fblike" class="fb-like" data-href="{{ site.url }}{{ page.url | relative-url }}" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true" style="float: left; clear: left; margin-right: 4em"></div>
 {% endunless %}
 {% unless page.nocomments %}
 <div id="fbcomments" class="fb-comments" data-href="{{ site.url }}{{ page.url | relative-url }}" data-numposts="10" data-width="100%" style="width: 100%; clear: both"></div>
 {% endunless %}
+</div>
 {% endif %}

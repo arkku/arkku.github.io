@@ -1,3 +1,3 @@
 {% if page.date %}
-<div class="square date" style="float: right; clear: right"><span class="day">{{ page.date | date: '%d' }}</span><span class="month"> {{ page.date | date: '%b' }} </span><span class="year">{{ page.date | date: '%Y' }}</span></div>
+<div class="square date" style="float: right; clear: right"><time datetime="{{ page.date | date: '%Y-%m-%d' }}"><span class="day">{{ page.date | date: '%d' }}</span><span class="month"> {{ page.date | date: '%b' }} </span><span class="year">{{ page.date | date: '%Y' }}</span></time></div>
 {% endif %}
