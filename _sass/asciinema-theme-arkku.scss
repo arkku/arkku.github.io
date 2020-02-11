@@ -1,0 +1,44 @@
+.asciinema-theme-arkku .asciinema-terminal {
+    color: #222;
+    background-color: #fff;
+    border-color: #eee;
+}
+.asciinema-theme-arkku .fg-bg { color: #fff; }
+.asciinema-theme-arkku .bg-fg { background-color: #222; }
+.asciinema-theme-arkku .fg-0, .fg-8 { color: #000; }
+.asciinema-theme-arkku .bg-0, .bg-8 { background-color: #000; }
+.asciinema-theme-arkku .fg-1, .fg-9 { color: #900; }
+.asciinema-theme-arkku .bg-1, .bg-9 { background-color: #900; }
+.asciinema-theme-arkku .fg-2, .fg-10 { color: #060; }
+.asciinema-theme-arkku .bg-2, .bg-10 { background-color: #060; }
+.asciinema-theme-arkku .fg-3, .fg-11 { color: #c60; }
+.asciinema-theme-arkku .bg-3, .bg-11 { background-color: #c60; }
+.asciinema-theme-arkku .fg-4, .fg-12 { color: #009; }
+.asciinema-theme-arkku .bg-4, .bg-12 { background-color: #009; }
+.asciinema-theme-arkku .fg-5, .fg-13 { color: #606; }
+.asciinema-theme-arkku .bg-5, .bg-13 { background-color: #606; }
+.asciinema-theme-arkku .fg-6, .fg-14 { color: #69c; }
+.asciinema-theme-arkku .bg-6, .bg-14 { background-color: #69c; }
+.asciinema-theme-arkku .fg-7, .fg-15 { color: #bbb; }
+.asciinema-theme-arkku .bg-7, .bg-15 { background-color: #bbb; }
+.asciinema-theme-arkku .fg-8, .asciinema-theme-arkku .fg-9, .asciinema-theme-arkku .fg-10, .asciinema-theme-arkku .fg-11, .asciinema-theme-arkku .fg-12, .asciinema-theme-arkku .fg-13, .asciinema-theme-arkku .fg-14, .asciinema-theme-arkku .fg-15 {
+    font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+  .asciinema-theme-arkku .asciinema-terminal {
+    color: #aaa;
+    background-color: #080811;
+    border-color: #000;
+}
+  .asciinema-theme-arkku .fg-bg { color: #080811; }
+  .asciinema-theme-arkku .bg-fg { background-color: #aaa; }
+  .asciinema-theme-arkku .fg-1, .fg-9 { color: #c00; }
+  .asciinema-theme-arkku .bg-1, .bg-9 { background-color: #c00; }
+  .asciinema-theme-arkku .fg-2, .fg-10 { color: #090; }
+  .asciinema-theme-arkku .bg-2, .bg-10 { background-color: #090; }
+  .asciinema-theme-arkku .fg-4, .fg-12 { color: #03c; }
+  .asciinema-theme-arkku .bg-4, .bg-12 { background-color: #03c; }
+  .asciinema-theme-arkku .fg-5, .fg-13 { color: #a0a; }
+  .asciinema-theme-arkku .bg-5, .bg-13 { background-color: #a0a; }
+}

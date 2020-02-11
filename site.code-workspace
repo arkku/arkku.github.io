@@ -11,7 +11,8 @@
 		"editor.wordWrap": "on",
 		"markdownlint.config": {
 			"default": true,
-			"MD033": false
+			"MD033": false,
+			"MD046": false
 		}
 	}
 }
